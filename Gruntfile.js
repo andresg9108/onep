@@ -1,13 +1,7 @@
 module.exports = function(grunt) {
-    var aRutasCHTML = [
-        './*',
-        './ejemplo/*',
-        './cargarHTML/rHTML/*'
-    ];
     var aRutasSass = ['./src/sass/*'];
     var aRutasJs = ['./src/js/*'];
-    var aRutasHandlebars = ['./src/templates/*'];
-    var aRutasHandlebarsJs = ['./src/templates/js/*'];
+    var aRutasHbs = ['./src/template/*'];
 
     // load all grunt tasks
     require('matchdep').filterDev('grunt-*').forEach(grunt.loadNpmTasks);
@@ -31,6 +25,17 @@ module.exports = function(grunt) {
             }
         },
 
+        handlebars: {
+          compile: {
+            options: {
+              namespace: 'JST'
+            },
+            files: {
+              'src/template/js/main.js': ['src/template/*.hbs']
+            }
+          }
+        },
+
         watch: {
             //Optiones de configuracion.
             options: {
@@ -41,8 +46,15 @@ module.exports = function(grunt) {
                 files: aRutasSass,
                 tasks: ['sass']
             },
+            tarea_handlebars: {
+                files: aRutasHbs,
+                tasks: ['handlebars']
+            },
             tarea_js: {
                 files: aRutasJs
+            },
+            tarea_index: {
+                files: ['./index.html']
             }
         }
         
