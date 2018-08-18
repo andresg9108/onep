@@ -1,16 +1,20 @@
 "use strict";
 
+var g_sRouteTemplate = 'src/template/';
+
 $(function(){
-	let template = Handlebars.templates['src/template/header.hbs'];
-	console.log(template);
+	let oData = {};
+	loadTemplate('header', 'header', oData)
+	loadTemplate('footer', 'footer', oData)
 });
 
 /*
 */
-/*function loadTemplate(sNameTemplate, sTag, oData){
-	let template = Handlebars.templates[sNameTemplate];
+function loadTemplate(sRouteTemplate, sTag, oData){
+	let sRoute = g_sRouteTemplate+sRouteTemplate+'.hbs';
+	let sTemplate = Hbs[sRoute](oData);
 	let isTemplate = $(sTag).attr('data-template');
 	if(isTemplate){
-		$(sTag).html(template(oData));
+		$(sTag).html(sTemplate);
 	}
-}*/
+}

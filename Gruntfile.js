@@ -12,8 +12,7 @@ module.exports = function(grunt) {
         sass: {
             dist: {
                 options: {
-                    style: 'compressed',
-                    noCache: true
+                    style: 'compressed', noCache: true
                 },
                 files: [{
                     expand: true,
@@ -28,7 +27,7 @@ module.exports = function(grunt) {
         handlebars: {
           compile: {
             options: {
-              namespace: 'JST'
+              namespace: 'Hbs'
             },
             files: {
               'src/template/js/main.js': ['src/template/*.hbs']
@@ -62,4 +61,5 @@ module.exports = function(grunt) {
     
     grunt.registerTask('default', ['watch']);
     grunt.loadNpmTasks('grunt-contrib');
+    grunt.loadNpmTasks('grunt-contrib-handlebars');
 };
