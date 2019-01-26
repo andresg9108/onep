@@ -1,7 +1,11 @@
 this["Hbs"] = this["Hbs"] || {};
 
+this["Hbs"]["src/template/body.hbs"] = Handlebars.template({"compiler":[7,">= 4.0.0"],"main":function(container,depth0,helpers,partials,data) {
+    return "<h2>Body</h2>";
+},"useData":true});
+
 this["Hbs"]["src/template/footer.hbs"] = Handlebars.template({"compiler":[7,">= 4.0.0"],"main":function(container,depth0,helpers,partials,data) {
-    return "<h2>Footer</h2>";
+    return "<h3>Footer</h3>";
 },"useData":true});
 
 this["Hbs"]["src/template/header.hbs"] = Handlebars.template({"compiler":[7,">= 4.0.0"],"main":function(container,depth0,helpers,partials,data) {
