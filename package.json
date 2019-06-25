@@ -1,0 +1,31 @@
+{
+  "name": "onep",
+  "version": "0.1.0",
+  "description": "",
+  "scripts": {
+    "start": "grunt"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/andresg9108/onep.git"
+  },
+  "author": "Andres Gonzalez",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/andresg9108/onep/issues"
+  },
+  "homepage": "https://github.com/andresg9108/onep#readme",
+  "devDependencies": {
+    "grunt": "^1.0.4",
+    "grunt-contrib": "^0.11.0",
+    "grunt-contrib-copy": "^1.0.0",
+    "grunt-contrib-handlebars": "^1.0.0",
+    "grunt-contrib-sass": "^1.0.0",
+    "grunt-contrib-watch": "^1.0.0",
+    "matchdep": "^2.0.0"
+  },
+  "dependencies": {
+    "handlebars": "^4.1.2",
+    "jquery": "^3.4.1"
+  }
+}
