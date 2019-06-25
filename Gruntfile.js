@@ -30,7 +30,7 @@ module.exports = function(grunt) {
               namespace: 'Hbs'
             },
             files: {
-              'src/template/js/main.js': ['src/template/*.hbs']
+              'src/template/dist/main.js': ['src/template/*.hbs']
             }
           }
         },
