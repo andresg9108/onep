@@ -1,5 +1,9 @@
 Manual to move from version v0.1.2 to v0.2.0
 
 1- Update file README.md.
+__________________________
+
+2- File Gruntfile.js
+* Eliminar linea "grunt.loadNpmTasks('grunt-contrib');";
 
 Ok, updated project.

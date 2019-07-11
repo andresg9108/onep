@@ -3,7 +3,6 @@ module.exports = function(grunt) {
     var aRutasJs = ['./src/js/*'];
     var aRutasHbs = ['./src/template/*'];
 
-    // load all grunt tasks
     require('matchdep').filterDev('grunt-*').forEach(grunt.loadNpmTasks);
 
     grunt.initConfig({
@@ -36,7 +35,6 @@ module.exports = function(grunt) {
         },
 
         watch: {
-            //Optiones de configuracion.
             options: {
                 nospawn: true,
                 livereload: true
@@ -60,6 +58,5 @@ module.exports = function(grunt) {
     });
     
     grunt.registerTask('default', ['watch']);
-    grunt.loadNpmTasks('grunt-contrib');
     grunt.loadNpmTasks('grunt-contrib-handlebars');
 };
