@@ -3,7 +3,7 @@
 var g_sRouteTemplate = 'src/template/';
 
 $(function(){
-	var oData = {nada:'nada'};
+	var oData = {};
 	loadTemplate('header', 'header', oData);
 	loadTemplate('body', 'section', oData);
 	loadTemplate('footer', 'footer', oData);
