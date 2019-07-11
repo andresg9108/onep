@@ -17,7 +17,7 @@ module.exports = function(grunt) {
                     expand: true,
                     cwd:    "src/sass/",
                     src:    ["*.sass"],
-                    dest: "src/css/",
+                    dest: "src/css/dist/",
                     ext:    ".css"
                 }]
             }
@@ -36,10 +36,11 @@ module.exports = function(grunt) {
 
         uglify: {
             dev: {
+                options: {
+                    sourceMap: true
+                },
                 files: {
-                    'src/js/dist/main.min.js': [
-                        'src/js/*.js'
-                    ]
+                    'src/js/dist/main.min.js': ['src/js/*.js']
                 }
             }
         },

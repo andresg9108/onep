@@ -12,10 +12,11 @@ __________________________
 * Add the task:
 uglify: {
     dev: {
+        options: {
+            sourceMap: true
+        },
         files: {
-            'src/js/dist/main.min.js': [
-                'src/js/*.js'
-            ]
+            'src/js/dist/main.min.js': ['src/js/*.js']
         }
     }
 },
@@ -24,12 +25,37 @@ js: {
     files: aRutasJs,
     tasks: ['uglify'] <-----
 },
+* Update one line in task "sass"
+sass: {
+    dist: {
+        options: {
+            style: 'compressed', noCache: true
+        },
+        files: [{
+            expand: true,
+            cwd:    "src/sass/",
+            src:    ["*.sass"],
+            dest: "src/css/dist/", <----
+            ext:    ".css"
+        }]
+    }
+},
 __________________________
 
 4- File index.html
 * Delete line <script src="src/js/main.js"></script>
 * Add line <script src="src/js/dist/main.min.js"></script>
+* Delete line <link rel="stylesheet" type="text/css" href="src/css/main.css" />
+* Add line <link rel="stylesheet" type="text/css" href="src/css/dist/main.css" />
+
+5- Delete files
+* src/css/main.css
+* src/css/main.css.map
 
 Note: As in this version you start using "grunt-contrib-uglify" it is better not to use "let" to define variables in "JavaScript" and use "var".
+
+5- Update files
+* Delete src/js/main.js
+* src/js/main.js -> src/js/app.js
 
 Ok, updated project.
