@@ -34,23 +34,34 @@ module.exports = function(grunt) {
           }
         },
 
+        uglify: {
+            dev: {
+                files: {
+                    'src/js/dist/main.min.js': [
+                        'src/js/*.js'
+                    ]
+                }
+            }
+        },
+
         watch: {
             options: {
                 nospawn: true,
                 livereload: true
             },
-            tarea_sass: {
+            sass: {
                 files: aRutasSass,
                 tasks: ['sass']
             },
-            tarea_handlebars: {
+            handlebars: {
                 files: aRutasHbs,
                 tasks: ['handlebars']
             },
-            tarea_js: {
-                files: aRutasJs
+            js: {
+                files: aRutasJs,
+                tasks: ['uglify']
             },
-            tarea_index: {
+            index: {
                 files: ['./index.html']
             }
         }
@@ -59,4 +70,5 @@ module.exports = function(grunt) {
     
     grunt.registerTask('default', ['watch']);
     grunt.loadNpmTasks('grunt-contrib-handlebars');
+    grunt.loadNpmTasks('grunt-contrib-uglify');
 };

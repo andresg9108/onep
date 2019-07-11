@@ -3,20 +3,20 @@
 var g_sRouteTemplate = 'src/template/';
 
 $(function(){
-	let oData = {};
-	loadTemplate('header', 'header', oData)
-	loadTemplate('body', 'section', oData)
-	loadTemplate('footer', 'footer', oData)
+	var oData = {nada:'nada'};
+	loadTemplate('header', 'header', oData);
+	loadTemplate('body', 'section', oData);
+	loadTemplate('footer', 'footer', oData);
 });
 
 /*
 */
 function loadTemplate(sRouteTemplate, sTag, oData){
-	let sRoute = g_sRouteTemplate+sRouteTemplate+'.hbs';
-	let sTemplate = Hbs[sRoute](oData);
-	let isTemplate = $(sTag).attr('data-template');
+	var sRoute = g_sRouteTemplate+sRouteTemplate+'.hbs';
+	var sTemplate = Hbs[sRoute](oData);
+	var isTemplate = $(sTag).attr('data-template');
 	isTemplate = (isTemplate == 'true');
-	let sClassCss = $(sTag).attr('data-styles');
+	var sClassCss = $(sTag).attr('data-styles');
 	if(isTemplate){
 		$(sTag).removeClass();
 		$(sTag).addClass(sClassCss);
