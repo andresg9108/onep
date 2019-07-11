@@ -3,7 +3,6 @@ module.exports = function(grunt) {
     var aRutasJs = ['./src/js/*'];
     var aRutasHbs = ['./src/template/*'];
 
-    // load all grunt tasks
     require('matchdep').filterDev('grunt-*').forEach(grunt.loadNpmTasks);
 
     grunt.initConfig({
@@ -18,7 +17,7 @@ module.exports = function(grunt) {
                     expand: true,
                     cwd:    "src/sass/",
                     src:    ["*.sass"],
-                    dest: "src/css/",
+                    dest: "src/css/dist/",
                     ext:    ".css"
                 }]
             }
@@ -35,24 +34,35 @@ module.exports = function(grunt) {
           }
         },
 
+        uglify: {
+            dev: {
+                options: {
+                    sourceMap: true
+                },
+                files: {
+                    'src/js/dist/main.min.js': ['src/js/*.js']
+                }
+            }
+        },
+
         watch: {
-            //Optiones de configuracion.
             options: {
                 nospawn: true,
                 livereload: true
             },
-            tarea_sass: {
+            sass: {
                 files: aRutasSass,
                 tasks: ['sass']
             },
-            tarea_handlebars: {
+            handlebars: {
                 files: aRutasHbs,
                 tasks: ['handlebars']
             },
-            tarea_js: {
-                files: aRutasJs
+            js: {
+                files: aRutasJs,
+                tasks: ['uglify']
             },
-            tarea_index: {
+            index: {
                 files: ['./index.html']
             }
         }
@@ -60,6 +70,6 @@ module.exports = function(grunt) {
     });
     
     grunt.registerTask('default', ['watch']);
-    grunt.loadNpmTasks('grunt-contrib');
     grunt.loadNpmTasks('grunt-contrib-handlebars');
+    grunt.loadNpmTasks('grunt-contrib-uglify');
 };
