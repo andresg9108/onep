@@ -1,3 +1,5 @@
 Manual to move from version v0.2.1 to v0.2.2
 
+1. Modifications to the README.md file.
+
 Ok, updated project.
