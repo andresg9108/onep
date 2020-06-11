@@ -7,15 +7,9 @@
 1. [Introduction.](#Introduction "Introduction")
 2. [Dependencies.](#Dependencies "Dependencies")
 3. [Starting.](#Starting "Starting")
+4. [Templates management.](#TemplatesManagement "Templates management")
 
 <span id="Introduction"></span>
-## Introduction ##
-
-This project...
-
-<span id="Dependencies"></span>
-## Dependencies ##
-
 - Node.js (https://nodejs.org).
 - Ruby (https://www.ruby-lang.org or https://rubyinstaller.org).
 - XAMPP (https://www.apachefriends.org/es/index.html).
@@ -47,10 +41,36 @@ Also, it is recommended to add the "Livereload" extension for "Google Chrome" or
 
 With this we can do our first test modifying the following file.
 
-File: ../xampp/onep/src/template/body.hbs
+**File: ../xampp/onep/src/template/body.hbs**
 
 ~~~
 <h2>Hello World!!!</h2>
 ~~~
 
-If all goes well, you will see the changes in the browser.
+If all goes well, you will see the changes in the browser. Each of the most relevant files and folders in the project is explained below with a description.
+
+* "../src/": Contains all the resources of the project.
+	- "../src/css/": Contains all the CSS files that SASS generates.
+	- "../src/js/": Contains all the JavaScript files for the project.
+	- "../src/sass/": Contains all the SASS files of the project.
+	- "../src/template/": Contains all the project templates.
+* "Gruntfile.js": Stores all grunt settings.
+* "index.html": HTML main file.
+* "package.json": Stores all Node.js settings.
+
+<span id="TemplatesManagement"></span>
+## Templates management ##
+
+We already know that the templates are in the "../src/template/" directory, now we will create two new templates to see how it works, which we will call "theme1.hbs" and "theme2.hbs".
+
+**File: ../src/template/theme1.hbs**
+
+~~~
+<h1>This is my theme #1</h1>
+~~~
+
+**File: ../src/template/theme2.hbs**
+
+~~~
+<h1>This is my theme #2</h1>
+~~~

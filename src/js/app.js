@@ -5,9 +5,9 @@ var oApp = {};
 
 $(function(){
 	var oData = {};
-	oApp.loadTemplate('header', 'header', oData);
-	oApp.loadTemplate('body', 'section', oData);
-	oApp.loadTemplate('footer', 'footer', oData);
+	oApp.loadTemplate('header', '#head', oData);
+	oApp.loadTemplate('body', '#body', oData);
+	oApp.loadTemplate('footer', '#foot', oData);
 });
 
 /*
