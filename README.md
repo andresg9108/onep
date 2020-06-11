@@ -8,8 +8,16 @@
 2. [Dependencies.](#Dependencies "Dependencies")
 3. [Starting.](#Starting "Starting")
 4. [Templates management.](#TemplatesManagement "Templates management")
+5. [Using SASS](#UsingSASS "Using SASS")
 
 <span id="Introduction"></span>
+## Introduction ##
+
+This project seeks to provide an alternative to creating Single Page Application Sites (SPA).
+
+<span id="Dependencies"></span>
+## Dependencies ##
+
 - Node.js (https://nodejs.org).
 - Ruby (https://www.ruby-lang.org or https://rubyinstaller.org).
 - XAMPP (https://www.apachefriends.org/es/index.html).
@@ -129,3 +137,36 @@ $(function(){
 See how the "oApp.loadTemplate(parameter1, parameter2, parameter3)" function is used to add new templates, where the first parameter is the name of the template, the second parameter is the ID where the template is loaded and the third parameter is the data that is send the template.
 
 Note: "grunt" may have problems loading new files, so it is recommended to stop the console using Ctrl+C and run "npm start" again.
+
+<span id="UsingSASS"></span>
+## Using SASS ##
+
+We start creating a file called "example.sass" in the path "../src/sass/", in which we will add the following lines:
+
+**File: ../src/sass/_example.sass**
+
+~~~
+$sBackgroundColor: #5555ff
+$sFontColor: #ffffff
+
+main
+	background-color: $sBackgroundColor
+	color: $sFontColor
+~~~
+
+Now we will modify the file "../src/sass/main.sass", as follows:
+
+**File: ../src/sass/main.sass**
+
+~~~
+@import 'example'
+
+*
+	margin: 0
+	padding: 0
+~~~
+
+We see how the "@import 'example'" line is agreed, which adds our new file to the main SASS file (main.sass). If everything goes well you will see the changes in the browser.
+
+Note: "grunt" may have problems loading new files, so it is recommended to stop the console using Ctrl+C and run "npm start" again.
+
