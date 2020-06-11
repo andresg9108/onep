@@ -72,5 +72,60 @@ We already know that the templates are in the "../src/template/" directory, now 
 **File: ../src/template/theme2.hbs**
 
 ~~~
-<h1>This is my theme #2</h1>
+<h1>This is my theme #2 [{{hello}}]</h1>
 ~~~
+
+Now we will modify the "body" of the file "../index.html", adding two type labels "section" called "theme1" and "theme2", as shown below.
+
+**File: ../index.html**
+
+~~~
+...
+<body>
+	<main>
+	  <header id="head" data-template="true" data-styles="">
+	    loaded...
+	  </header>
+	  <section id="body" data-template="true" data-styles="">
+	    loaded...
+	  </section>
+
+	  <section id="theme1" data-template="true" data-styles="">
+	    loaded...
+	  </section>
+	  <section id="theme2" data-template="true" data-styles="">
+	    loaded...
+	  </section>
+
+	  <footer id="foot" data-template="true" data-styles="">
+	    loaded...
+	  </footer>
+	</main>
+</body>
+...
+~~~
+
+Now we will modify the file "../src/js/app.js", adding the lines that load the two new templates, as follows:
+
+**File: ../src/js/app.js**
+
+~~~
+...
+$(function(){
+	var oData = {};
+	oApp.loadTemplate('header', '#head', oData);
+	oApp.loadTemplate('body', '#body', oData);
+	oApp.loadTemplate('footer', '#foot', oData);
+
+	oApp.loadTemplate('theme1', '#theme1', oData);
+	oData = {
+		'hello': 'Hello World'
+	};
+	oApp.loadTemplate('theme2', '#theme2', oData);
+});
+...
+~~~
+
+See how the "oApp.loadTemplate(parameter1, parameter2, parameter3)" function is used to add new templates, where the first parameter is the name of the template, the second parameter is the ID where the template is loaded and the third parameter is the data that is send the template.
+
+Note: "grunt" may have problems loading new files, so it is recommended to stop the console using Ctrl+C and run "npm start" again.
