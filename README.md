@@ -9,6 +9,7 @@
 3. [Starting.](#Starting "Starting")
 4. [Templates management.](#TemplatesManagement "Templates management")
 5. [Using SASS](#UsingSASS "Using SASS")
+6. [Using JavaScript.](#UsingJavaScript "Using JavaScript")
 
 <span id="Introduction"></span>
 ## Introduction ##
@@ -136,7 +137,7 @@ $(function(){
 
 See how the "oApp.loadTemplate(parameter1, parameter2, parameter3)" function is used to add new templates, where the first parameter is the name of the template, the second parameter is the ID where the template is loaded and the third parameter is the data that is send the template.
 
-Note: "grunt" may have problems loading new files, so it is recommended to stop the console using Ctrl+C and run "npm start" again.
+Note: "grunt" may have problems loading new files, so it is recommended to stop the console using Ctrl + C, run "npm start" again and try to save the changes again.
 
 <span id="UsingSASS"></span>
 ## Using SASS ##
@@ -168,5 +169,25 @@ Now we will modify the file "../src/sass/main.sass", as follows:
 
 We see how the "@import 'example'" line is agreed, which adds our new file to the main SASS file (main.sass). If everything goes well you will see the changes in the browser.
 
-Note: "grunt" may have problems loading new files, so it is recommended to stop the console using Ctrl+C and run "npm start" again.
+Note: "grunt" may have problems loading new files, so it is recommended to stop the console using Ctrl + C, run "npm start" again and try to save the changes again.
 
+<span id="UsingJavaScript"></span>
+## Using JavaScript ##
+
+We start creating a file called "example.js" in the path "../src/js/", in which we will add the following lines:
+
+**File: ../src/js/example.js**
+
+~~~
+"use strict";
+
+$(function(){
+	var hello = "Hello World!!!"
+
+	console.log(hello);
+});
+~~~
+
+If you go to the browser again and open its console, you will see the changes.
+
+Note: "grunt" may have problems loading new files, so it is recommended to stop the console using Ctrl + C, run "npm start" again and try to save the changes again.
