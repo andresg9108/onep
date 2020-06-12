@@ -1,9 +1,6 @@
-Manual to move from version v0.2.0 to v0.2.1
+Manual to move from version v0.2.1 to v0.2.2
 
-1- Delete "node_modules" folder.
-2- Delete "package-lock.json" file.
-3- Execute "npm cache clean --force" in the root of the project.
-3- Execute "npm update" in the root of the project.
-3- Execute "npm i" in the root of the project.
+1. Modifications to the README.md file.
+2. Update Node.js packages "npm update".
 
 Ok, updated project.
