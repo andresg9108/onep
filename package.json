@@ -1,7 +1,7 @@
 {
   "name": "onep-ag",
   "version": "0.2.3",
-  "description": "Project designed for frontend software development.",
+  "description": "This project seeks to provide an alternative to creating Single Page Application Sites (SPA).",
   "scripts": {
     "start": "grunt"
   },

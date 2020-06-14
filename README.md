@@ -23,6 +23,8 @@ This project seeks to provide an alternative to creating Single Page Application
 - Ruby (https://www.ruby-lang.org or https://rubyinstaller.org).
 - XAMPP (https://www.apachefriends.org/es/index.html).
 - Execute "gem install sass" on the console of your operating system.
+- Execute "npm i grunt -g" on the console of your operating system.
+- Execute "npm i install-here -g" on the console of your operating system.
 
 <span id="Starting"></span>
 ## Starting ##
