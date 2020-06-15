@@ -23,25 +23,27 @@ This project seeks to provide an alternative to creating Single Page Application
 - Ruby (https://www.ruby-lang.org or https://rubyinstaller.org).
 - XAMPP (https://www.apachefriends.org/es/index.html).
 - Execute "gem install sass" on the console of your operating system.
+- Execute "npm i grunt -g" on the console of your operating system.
+- Execute "npm i install-here -g" on the console of your operating system.
 
 <span id="Starting"></span>
 ## Starting ##
 
-In principle, don't forget to open the "XAMPP Control Panel" and start the "Apache" service. Now we can clone or download the files of the "onep" project in the "XAMPP" file path, which is "../xampp/htdocs/" and it would remain "../xampp/htdocs/onep". The link to the "onep" project can be found below:
+In principle, don't forget to open the "XAMPP Control Panel" and start the "Apache" service. Now we will create a folder called "myproject" in the path of the "XAMPP" file, which would be left with the following path "../xampp/htdocs/myproject". With the folder ready, we can now access it using the console of your operating system and execute the following command, which brings all the files from the "onep" project.
 
-[OneP project.](https://github.com/andresg9108/onep "OneP project")
+***install-here onep-ag***
 
-Now we will go to "../xampp/htdocs/onep" using the console of our operating system and execute the following command, which will load all the dependencies of the "onep" project.
+Then we execute the following command that brings all the dependencies of the "onep" project.
 
 ***npm i***
 
-Now we can execute the following command, which listens to our project.
+Now we can execute the following command, that makes our project listen to the changes and automatically execute the corresponding commands.
 
 ***npm start***
 
 In the development phase, the project must always be listening to changes. With this we can already enter the following URL and see our project for the first time.
 
-**http://localhost/onep/**
+**http://localhost/myproject/**
 
 Also, it is recommended to add the "Livereload" extension for "Google Chrome" or "Mozilla Firefox". This will instruct these browsers to refresh the page the moment they detect a change, but remember to listen to the project with the "npm start" command and activate "Livereload" in the browser you want.
 
@@ -50,7 +52,7 @@ Also, it is recommended to add the "Livereload" extension for "Google Chrome" or
 
 With this we can do our first test modifying the following file.
 
-**File: ../xampp/onep/src/template/body.hbs**
+**File: ../src/template/body.hbs**
 
 ~~~
 <h2>Hello World!!!</h2>
@@ -114,7 +116,7 @@ Now we will modify the "body" of the file "../index.html", adding two type label
 ...
 ~~~
 
-Now we will modify the file "../src/js/app.js", adding the lines that load the two new templates, as follows:
+Now we will modify the file "../src/js/app.js", adding the lines that load the two new templates, as follows.
 
 **File: ../src/js/app.js**
 
@@ -142,7 +144,7 @@ Note: "grunt" may have problems loading new files, so it is recommended to stop 
 <span id="UsingSASS"></span>
 ## Using SASS ##
 
-We start creating a file called "example.sass" in the path "../src/sass/", in which we will add the following lines:
+We start creating a file called "example.sass" in the path "../src/sass/", in which we will add the following lines.
 
 **File: ../src/sass/_example.sass**
 
@@ -155,7 +157,7 @@ main
 	color: $sFontColor
 ~~~
 
-Now we will modify the file "../src/sass/main.sass", as follows:
+Now we will modify the file "../src/sass/main.sass", as follows.
 
 **File: ../src/sass/main.sass**
 
@@ -167,14 +169,14 @@ Now we will modify the file "../src/sass/main.sass", as follows:
 	padding: 0
 ~~~
 
-We see how the "@import 'example'" line is agreed, which adds our new file to the main SASS file (main.sass). If everything goes well you will see the changes in the browser.
+See how we use the "@import 'example'" line, which adds our new file to the main SASS file (main.sass). If all goes well, you will see the changes in the browser.
 
 Note: "grunt" may have problems loading new files, so it is recommended to stop the console using Ctrl + C, run "npm start" again and try to save the changes again.
 
 <span id="UsingJavaScript"></span>
 ## Using JavaScript ##
 
-We start creating a file called "example.js" in the path "../src/js/", in which we will add the following lines:
+We start creating a file called "example.js" in the path "../src/js/", in which we will add the following lines.
 
 **File: ../src/js/example.js**
 
