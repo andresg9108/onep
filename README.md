@@ -116,7 +116,7 @@ Now we will modify the "body" of the file "../index.html", adding two type label
 ...
 ~~~
 
-Now we will modify the file "../src/js/app.js", adding the lines that load the two new templates, as follows:
+Now we will modify the file "../src/js/app.js", adding the lines that load the two new templates, as follows.
 
 **File: ../src/js/app.js**
 
@@ -144,7 +144,7 @@ Note: "grunt" may have problems loading new files, so it is recommended to stop 
 <span id="UsingSASS"></span>
 ## Using SASS ##
 
-We start creating a file called "example.sass" in the path "../src/sass/", in which we will add the following lines:
+We start creating a file called "example.sass" in the path "../src/sass/", in which we will add the following lines.
 
 **File: ../src/sass/_example.sass**
 
@@ -157,7 +157,7 @@ main
 	color: $sFontColor
 ~~~
 
-Now we will modify the file "../src/sass/main.sass", as follows:
+Now we will modify the file "../src/sass/main.sass", as follows.
 
 **File: ../src/sass/main.sass**
 
@@ -169,14 +169,14 @@ Now we will modify the file "../src/sass/main.sass", as follows:
 	padding: 0
 ~~~
 
-We see how the "@import 'example'" line is agreed, which adds our new file to the main SASS file (main.sass). If everything goes well you will see the changes in the browser.
+See how we use the "@import 'example'" line, which adds our new file to the main SASS file (main.sass). If all goes well, you will see the changes in the browser.
 
 Note: "grunt" may have problems loading new files, so it is recommended to stop the console using Ctrl + C, run "npm start" again and try to save the changes again.
 
 <span id="UsingJavaScript"></span>
 ## Using JavaScript ##
 
-We start creating a file called "example.js" in the path "../src/js/", in which we will add the following lines:
+We start creating a file called "example.js" in the path "../src/js/", in which we will add the following lines.
 
 **File: ../src/js/example.js**
 
