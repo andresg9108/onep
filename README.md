@@ -29,21 +29,21 @@ This project seeks to provide an alternative to creating Single Page Application
 <span id="Starting"></span>
 ## Starting ##
 
-In principle, don't forget to open the "XAMPP Control Panel" and start the "Apache" service. Now we can clone or download the files of the "onep" project in the "XAMPP" file path, which is "../xampp/htdocs/" and it would remain "../xampp/htdocs/onep". The link to the "onep" project can be found below:
+In principle, don't forget to open the "XAMPP Control Panel" and start the "Apache" service. Now we will create a folder called "myproject" in the path of the "XAMPP" file, which would be left with the following path "../xampp/htdocs/myproject". With the folder ready, we can now access it using the console of your operating system and execute the following command, which brings all the files from the "onep" project.
 
-[OneP project.](https://github.com/andresg9108/onep "OneP project")
+***install-here onep-ag***
 
-Now we will go to "../xampp/htdocs/onep" using the console of our operating system and execute the following command, which will load all the dependencies of the "onep" project.
+Then we execute the following command that brings all the dependencies of the "onep" project.
 
 ***npm i***
 
-Now we can execute the following command, which listens to our project.
+Now we can execute the following command, that makes our project listen to the changes and automatically execute the corresponding commands.
 
 ***npm start***
 
 In the development phase, the project must always be listening to changes. With this we can already enter the following URL and see our project for the first time.
 
-**http://localhost/onep/**
+**http://localhost/myproject/**
 
 Also, it is recommended to add the "Livereload" extension for "Google Chrome" or "Mozilla Firefox". This will instruct these browsers to refresh the page the moment they detect a change, but remember to listen to the project with the "npm start" command and activate "Livereload" in the browser you want.
 
@@ -52,7 +52,7 @@ Also, it is recommended to add the "Livereload" extension for "Google Chrome" or
 
 With this we can do our first test modifying the following file.
 
-**File: ../xampp/onep/src/template/body.hbs**
+**File: ../src/template/body.hbs**
 
 ~~~
 <h2>Hello World!!!</h2>
