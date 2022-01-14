@@ -1,8 +1,11 @@
-module.exports = function(grunt) {
-    var aRutasSass = ['./src/sass/*'];
-    var aRutasJs = ['./src/js/*'];
-    var aRutasHbs = ['./src/template/*'];
+const fs = require('fs');
+var oHbsRoutes = require('./grunt/hbs/routes.js');
+var oHbsFiles = require('./grunt/hbs/files.js');
+var oSassRoutes = require('./grunt/sass/routes.js');
+var oJsRoutes = require('./grunt/js/routes.js');
+var oJsFiles = require('./grunt/js/files.js');
 
+module.exports = function(grunt) {
     require('matchdep').filterDev('grunt-*').forEach(grunt.loadNpmTasks);
 
     grunt.initConfig({
@@ -18,7 +21,7 @@ module.exports = function(grunt) {
                     cwd:    "src/sass/",
                     src:    ["*.sass"],
                     dest: "src/css/dist/",
-                    ext:    ".css"
+                    ext:    ".min.css"
                 }]
             }
         },
@@ -28,9 +31,7 @@ module.exports = function(grunt) {
             options: {
               namespace: 'Hbs'
             },
-            files: {
-              'src/template/dist/main.js': ['src/template/*.hbs']
-            }
+            files: oHbsFiles.o
           }
         },
 
@@ -39,37 +40,34 @@ module.exports = function(grunt) {
                 options: {
                     sourceMap: true
                 },
-                files: {
-                    'src/js/dist/main.min.js': ['src/js/*.js']
-                }
+                files: oJsFiles.o
             }
         },
 
         watch: {
+            files: ['*.*'],
             options: {
                 nospawn: true,
-                livereload: true
+                livereload: {
+                    host: 'localhost',
+                    port: 35729
+                }
             },
-            sass: {
-                files: aRutasSass,
+            task_sass: {
+                files: oSassRoutes.a,
                 tasks: ['sass']
             },
-            handlebars: {
-                files: aRutasHbs,
+            task_handlebars: {
+                files: oHbsRoutes.a,
                 tasks: ['handlebars']
             },
-            js: {
-                files: aRutasJs,
+            task_js:{
+                files: oJsRoutes.a,
                 tasks: ['uglify']
-            },
-            index: {
-                files: ['./index.html']
             }
         }
         
     });
-    
+
     grunt.registerTask('default', ['watch']);
-    grunt.loadNpmTasks('grunt-contrib-handlebars');
-    grunt.loadNpmTasks('grunt-contrib-uglify');
 };
