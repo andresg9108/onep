@@ -4,6 +4,7 @@ var oHbsFiles = require('./grunt/hbs/files.js');
 var oSassRoutes = require('./grunt/sass/routes.js');
 var oJsRoutes = require('./grunt/js/routes.js');
 var oJsFiles = require('./grunt/js/files.js');
+var oChildProcess = require('child_process');
 
 module.exports = function(grunt) {
     require('matchdep').filterDev('grunt-*').forEach(grunt.loadNpmTasks);
@@ -70,4 +71,15 @@ module.exports = function(grunt) {
     });
 
     grunt.registerTask('default', ['watch']);
+
+    // Begin (Threads)
+    var oSp1 = oChildProcess.fork(`./process/sys-express.js`);
+    oSp1.send({
+        sysexpress: {
+            activate: true,
+            port: 8082,
+            path: __dirname
+        }
+    });
+    // End (Threads)
 };
