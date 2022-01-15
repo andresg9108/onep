@@ -3,7 +3,7 @@
 var g_sRouteTemplate = 'src/template/';
 var oApp = {};
 
-$(function(){
+$(() => {
 	var oData = {};
 	oApp.loadTemplate('header', '#head', oData);
 	oApp.loadTemplate('body', '#body', oData);
