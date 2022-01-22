@@ -3,7 +3,7 @@
 var g_sRouteTemplate = 'src/template/';
 var oApp = {};
 
-$(function(){
+$(() => {
 	var oData = {};
 	oApp.loadTemplate('header', '#head', oData);
 	oApp.loadTemplate('body', '#body', oData);
@@ -12,7 +12,7 @@ $(function(){
 
 /*
 */
-oApp.loadTemplate = function(sRouteTemplate, sTag, oData){
+oApp.loadTemplate = (sRouteTemplate, sTag, oData) => {
 	var sRoute = g_sRouteTemplate+sRouteTemplate+'.hbs';
 	var sTemplate = Hbs[sRoute](oData);
 	var isTemplate = $(sTag).attr('data-template');

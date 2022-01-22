@@ -1,1 +1,4 @@
-node_modules
+/node_modules
+/src/css/dist
+/src/js/dist
+/src/template/dist
