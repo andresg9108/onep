@@ -71,15 +71,4 @@ module.exports = function(grunt) {
     });
 
     grunt.registerTask('default', ['watch']);
-
-    // Begin (Threads)
-    var oSp1 = oChildProcess.fork(`./process/sys-express.js`);
-    oSp1.send({
-        sysexpress: {
-            activate: true,
-            port: 8082,
-            path: __dirname
-        }
-    });
-    // End (Threads)
 };
