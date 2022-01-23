@@ -23,41 +23,42 @@ This project seeks to provide an alternative to creating Single Page Application
 - Execute "gem install sass" on the console of your operating system.
 - Execute "npm i onep-cli -g" on the console of your operating system.
 
-***THE DOCUMENTATION IS BEING REVIEWED FROM HERE***
-
 ## Getting started <span name="GettingStarted"></span> ##
 
-In principle, don't forget to open the "XAMPP Control Panel" and start the "Apache" service. Now we will create a folder called "myproject" in the path of the "XAMPP" file, which would be left with the following path "../xampp/htdocs/myproject". With the folder ready, we can now access it using the console of your operating system and execute the following command, which brings all the files from the "onep" project.
+Using the console of our operating system we will access the directory that we want for our project, then we will execute the following command that will load all the files of the "onep" project.
 
-***install-here onep-ag***
+~~~
+onep-cli install
+~~~
 
-Then we execute the following command that brings all the dependencies of the "onep" project.
+Now we can execute the following command that makes our project be aware of the changes to automatically execute the corresponding commands.
 
-***npm i***
+~~~
+onep-cli start
+~~~
 
-Now we can execute the following command, that makes our project listen to the changes and automatically execute the corresponding commands.
+In the development phase, the project must always be attentive to changes and to exit you just have to use Ctrl + C. With this we can enter the following URL and see our project for the first time.
 
-***npm start***
+**http://localhost:8084**
 
-In the development phase, the project must always be listening to changes. With this we can already enter the following URL and see our project for the first time.
-
-**http://localhost/myproject/**
-
-Also, it is recommended to add the "Livereload" extension for "Google Chrome" or "Mozilla Firefox". This will instruct these browsers to refresh the page the moment they detect a change, but remember to listen to the project with the "npm start" command and activate "Livereload" in the browser you want.
+It is also recommended to add the extension "Livereload" for "Google Chrome" or "Mozilla Firefox". This will tell these browsers to refresh the page the moment they detect a change, but always remember to run the "onep-cli start" command, prevent the browser from caching, and enable "Livereload" on it.
 
 - [Extension for Google Chrome.](https://chrome.google.com/webstore/detail/livereload/jnihajbhpnppcggbcgedagnkighmdlei?hl=es "Extension for Google Chrome.")
 - [Extension for Mozilla Firefox.](https://addons.mozilla.org/es/firefox/addon/livereload-web-extension "Extension for Mozilla Firefox.")
 
-With this we can do our first test modifying the following file.
+With this we can make our first test modifying the file "./src/template/body.hbs" adding a "Hello World" to it. Modifying this file would look like this.
 
-**File: ../src/template/body.hbs**
+**File: ./src/template/body.hbs**
 
-~~~
+```hbs
 <h2>Hello World!!!</h2>
-~~~
+```
 
 If all goes well, you will see the changes in the browser. Each of the most relevant files and folders in the project is explained below with a description.
 
+***THE DOCUMENTATION IS BEING REVIEWED FROM HERE***
+
+* "./grunt/": It contains all the routes that Grunt uses to function.
 * "../src/": Contains all the resources of the project.
 	- "../src/css/": Contains all the CSS files that SASS generates.
 	- "../src/js/": Contains all the JavaScript files for the project.
