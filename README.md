@@ -2,34 +2,30 @@
 
 # OneP (In a page) #
 
-***THE DOCUMENTATION IS BEING REVIEWED FROM HERE***
-
 ## Content ##
 
 1. [Introduction.](#Introduction "Introduction")
 2. [Dependencies.](#Dependencies "Dependencies")
-3. [Starting.](#Starting "Starting")
-4. [Templates management.](#TemplatesManagement "Templates management")
-5. [Using SASS](#UsingSASS "Using SASS")
+3. [Getting started.](#GettingStarted "Getting started")
 6. [Using JavaScript.](#UsingJavaScript "Using JavaScript")
+4. [Using Templates.](#UsingTemplates "Using Templates")
+5. [Using SASS.](#UsingSASS "Using SASS")
+7. [Production.](#Production "Production")
 
-<span id="Introduction"></span>
-## Introduction ##
+## Introduction <span name="Introduction"></span> ##
 
 This project seeks to provide an alternative to creating Single Page Application Sites (SPA).
 
-<span id="Dependencies"></span>
-## Dependencies ##
+## Dependencies <span name="Dependencies"></span> ##
 
 - Node.js (https://nodejs.org).
 - Ruby (https://www.ruby-lang.org or https://rubyinstaller.org).
-- XAMPP (https://www.apachefriends.org/es/index.html).
 - Execute "gem install sass" on the console of your operating system.
-- Execute "npm i grunt -g" on the console of your operating system.
-- Execute "npm i install-here -g" on the console of your operating system.
+- Execute "npm i onep-cli -g" on the console of your operating system.
 
-<span id="Starting"></span>
-## Starting ##
+***THE DOCUMENTATION IS BEING REVIEWED FROM HERE***
+
+## Getting started <span name="GettingStarted"></span> ##
 
 In principle, don't forget to open the "XAMPP Control Panel" and start the "Apache" service. Now we will create a folder called "myproject" in the path of the "XAMPP" file, which would be left with the following path "../xampp/htdocs/myproject". With the folder ready, we can now access it using the console of your operating system and execute the following command, which brings all the files from the "onep" project.
 
@@ -71,8 +67,7 @@ If all goes well, you will see the changes in the browser. Each of the most rele
 * "index.html": HTML main file.
 * "package.json": Stores all Node.js settings.
 
-<span id="TemplatesManagement"></span>
-## Templates management ##
+## Using Templates <span name="UsingTemplates"></span> ##
 
 We already know that the templates are in the "../src/template/" directory, now we will create two new templates to see how it works, which we will call "theme1.hbs" and "theme2.hbs".
 
@@ -143,8 +138,7 @@ See how the "oApp.loadTemplate(parameter1, parameter2, parameter3)" function is 
 
 Note: "grunt" may have problems loading new files, so it is recommended to stop the console using Ctrl + C, run "npm start" again and try to save the changes again.
 
-<span id="UsingSASS"></span>
-## Using SASS ##
+## Using SASS <span name="UsingSASS"></span> ##
 
 We start creating a file called "example.sass" in the path "../src/sass/", in which we will add the following lines.
 
@@ -175,8 +169,7 @@ See how we use the "@import 'example'" line, which adds our new file to the main
 
 Note: "grunt" may have problems loading new files, so it is recommended to stop the console using Ctrl + C, run "npm start" again and try to save the changes again.
 
-<span id="UsingJavaScript"></span>
-## Using JavaScript ##
+## Using JavaScript <span name="UsingJavaScript"></span> ##
 
 We start creating a file called "example.js" in the path "../src/js/", in which we will add the following lines.
 
@@ -195,3 +188,5 @@ $(function(){
 If you go to the browser again and open its console, you will see the changes.
 
 Note: "grunt" may have problems loading new files, so it is recommended to stop the console using Ctrl + C, run "npm start" again and try to save the changes again.
+
+## Production <span name="Production"></span> ##
