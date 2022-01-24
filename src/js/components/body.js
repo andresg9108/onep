@@ -6,5 +6,5 @@ var oBody = {};
 */
 oBody.load = () => {
 	let oData = {};
-	oApp.loadTemplate('body', '#body', oData);
+	oApp.loadTemplate('components/body', '#body', oData);
 }

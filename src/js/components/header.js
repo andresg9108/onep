@@ -6,5 +6,5 @@ var oHeader = {};
 */
 oHeader.load = () => {
 	let oData = {};
-	oApp.loadTemplate('header', '#header', oData);
+	oApp.loadTemplate('components/header', '#header', oData);
 }

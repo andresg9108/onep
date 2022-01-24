@@ -1,3 +1,3 @@
 exports.a=[
-'./src/template/*'
+'./src/template/components/*'
 ];

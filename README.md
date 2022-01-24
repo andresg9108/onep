@@ -7,10 +7,11 @@
 1. [Introduction.](#Introduction "Introduction")
 2. [Dependencies.](#Dependencies "Dependencies")
 3. [Getting started.](#GettingStarted "Getting started")
-4. [Using Templates.](#UsingTemplates "Using Templates")
-5. [Using JavaScript.](#UsingJavaScript "Using JavaScript")
-6. [Using SASS.](#UsingSASS "Using SASS")
-7. [Production.](#Production "Production")
+4. [Using components.](#UsingComponents "Using components")
+
+
+5. [Using SASS.](#UsingSASS "Using SASS")
+6. [Production.](#Production "Production")
 
 ## Introduction <span name="Introduction"></span> ##
 
@@ -46,9 +47,9 @@ It is also recommended to add the extension "Livereload" for "Google Chrome" or 
 - [Extension for Google Chrome.](https://chrome.google.com/webstore/detail/livereload/jnihajbhpnppcggbcgedagnkighmdlei?hl=es "Extension for Google Chrome.")
 - [Extension for Mozilla Firefox.](https://addons.mozilla.org/es/firefox/addon/livereload-web-extension "Extension for Mozilla Firefox.")
 
-With this we can make our first test modifying the file "./src/template/body.hbs" adding a "Hello World" to it. Modifying this file would look like this.
+With this we can make our first test modifying the file "./src/template/components/body.hbs" adding a "Hello World" to it. Modifying this file would look like this.
 
-**File: ./src/template/body.hbs**
+**File: ./src/template/components/body.hbs**
 
 ```hbs
 <h2>Hello World!!!</h2>
@@ -66,6 +67,8 @@ If all goes well, you will see the changes in the browser. Each of the most rele
 * "./index.html": Main HTML file.
 * "./package.json": Stores all Node.js settings.
 
+## Using components <span name="UsingComponents"></span> ##
+
 ***THE DOCUMENTATION IS BEING REVIEWED FROM HERE***
 
 
@@ -79,96 +82,7 @@ If all goes well, you will see the changes in the browser. Each of the most rele
 
 
 
-## Using Templates <span name="UsingTemplates"></span> ##
 
-We already know that the templates are in the "../src/template/" directory, now we will create two new templates to see how it works, which we will call "theme1.hbs" and "theme2.hbs".
-
-**File: ../src/template/theme1.hbs**
-
-~~~
-<h1>This is my theme #1</h1>
-~~~
-
-**File: ../src/template/theme2.hbs**
-
-~~~
-<h1>This is my theme #2 [{{hello}}]</h1>
-~~~
-
-Now we will modify the "body" of the file "../index.html", adding two type labels "section" called "theme1" and "theme2", as shown below.
-
-**File: ../index.html**
-
-~~~
-...
-<body>
-	<main>
-	  <header id="head" data-template="true" data-styles="">
-	    loaded...
-	  </header>
-	  <section id="body" data-template="true" data-styles="">
-	    loaded...
-	  </section>
-
-	  <section id="theme1" data-template="true" data-styles="">
-	    loaded...
-	  </section>
-	  <section id="theme2" data-template="true" data-styles="">
-	    loaded...
-	  </section>
-
-	  <footer id="foot" data-template="true" data-styles="">
-	    loaded...
-	  </footer>
-	</main>
-</body>
-...
-~~~
-
-Now we will modify the file "../src/js/app.js", adding the lines that load the two new templates, as follows.
-
-**File: ../src/js/app.js**
-
-~~~
-...
-$(function(){
-	var oData = {};
-	oApp.loadTemplate('header', '#head', oData);
-	oApp.loadTemplate('body', '#body', oData);
-	oApp.loadTemplate('footer', '#foot', oData);
-
-	oApp.loadTemplate('theme1', '#theme1', oData);
-	oData = {
-		'hello': 'Hello World'
-	};
-	oApp.loadTemplate('theme2', '#theme2', oData);
-});
-...
-~~~
-
-See how the "oApp.loadTemplate(parameter1, parameter2, parameter3)" function is used to add new templates, where the first parameter is the name of the template, the second parameter is the ID where the template is loaded and the third parameter is the data that is send the template.
-
-Note: "grunt" may have problems loading new files, so it is recommended to stop the console using Ctrl + C, run "npm start" again and try to save the changes again.
-
-## Using JavaScript <span name="UsingJavaScript"></span> ##
-
-We start creating a file called "example.js" in the path "../src/js/", in which we will add the following lines.
-
-**File: ../src/js/example.js**
-
-~~~
-"use strict";
-
-$(function(){
-	var hello = "Hello World!!!"
-
-	console.log(hello);
-});
-~~~
-
-If you go to the browser again and open its console, you will see the changes.
-
-Note: "grunt" may have problems loading new files, so it is recommended to stop the console using Ctrl + C, run "npm start" again and try to save the changes again.
 
 
 
