@@ -8,8 +8,6 @@
 2. [Dependencies.](#Dependencies "Dependencies")
 3. [Getting started.](#GettingStarted "Getting started")
 4. [Using components.](#UsingComponents "Using components")
-
-
 5. [Using SASS.](#UsingSASS "Using SASS")
 6. [Production.](#Production "Production")
 
@@ -117,8 +115,5 @@ Now we will modify the file "../src/sass/main.sass", as follows.
 See how we use the "@import 'example'" line, which adds our new file to the main SASS file (main.sass). If all goes well, you will see the changes in the browser.
 
 Note: "grunt" may have problems loading new files, so it is recommended to stop the console using Ctrl + C, run "npm start" again and try to save the changes again.
-
-
-
 
 ## Production <span name="Production"></span> ##
