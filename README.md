@@ -56,17 +56,17 @@ With this we can make our first test modifying the file "./src/template/body.hbs
 
 If all goes well, you will see the changes in the browser. Each of the most relevant files and folders in the project is explained below with a description.
 
-***THE DOCUMENTATION IS BEING REVIEWED FROM HERE***
-
 * "./grunt/": It contains all the routes that Grunt uses to function.
-* "../src/": Contains all the resources of the project.
-	- "../src/css/": Contains all the CSS files that SASS generates.
-	- "../src/js/": Contains all the JavaScript files for the project.
-	- "../src/sass/": Contains all the SASS files of the project.
-	- "../src/template/": Contains all the project templates.
-* "Gruntfile.js": Stores all grunt settings.
-* "index.html": HTML main file.
-* "package.json": Stores all Node.js settings.
+* "./src/": It contains all the resources of the project.
+	- "./src/css/": It contains all the CSS files that SASS generates.
+	- "./src/js/": Here we can manage our javascript files.
+	- "./src/sass/": Here we can manage our sass files.
+	- "./src/template/": Here we can manage our handlebars files.
+* "./Gruntfile.js": Stores all grunt settings.
+* "./index.html": Main HTML file.
+* "./package.json": Stores all Node.js settings.
+
+***THE DOCUMENTATION IS BEING REVIEWED FROM HERE***
 
 ## Using Templates <span name="UsingTemplates"></span> ##
 
