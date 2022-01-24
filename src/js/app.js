@@ -1,13 +1,12 @@
 "use strict";
 
-var g_sRouteTemplate = 'src/template/';
 var oApp = {};
+var g_sRouteTemplate = 'src/template/';
 
 $(() => {
-	var oData = {};
-	oApp.loadTemplate('header', '#head', oData);
-	oApp.loadTemplate('body', '#body', oData);
-	oApp.loadTemplate('footer', '#foot', oData);
+	oHeader.load();
+	oBody.load();
+	oFooter.load();
 });
 
 /*

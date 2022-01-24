@@ -7,9 +7,9 @@
 1. [Introduction.](#Introduction "Introduction")
 2. [Dependencies.](#Dependencies "Dependencies")
 3. [Getting started.](#GettingStarted "Getting started")
-6. [Using JavaScript.](#UsingJavaScript "Using JavaScript")
 4. [Using Templates.](#UsingTemplates "Using Templates")
-5. [Using SASS.](#UsingSASS "Using SASS")
+5. [Using JavaScript.](#UsingJavaScript "Using JavaScript")
+6. [Using SASS.](#UsingSASS "Using SASS")
 7. [Production.](#Production "Production")
 
 ## Introduction <span name="Introduction"></span> ##
@@ -67,6 +67,17 @@ If all goes well, you will see the changes in the browser. Each of the most rele
 * "./package.json": Stores all Node.js settings.
 
 ***THE DOCUMENTATION IS BEING REVIEWED FROM HERE***
+
+
+
+
+
+
+
+
+
+
+
 
 ## Using Templates <span name="UsingTemplates"></span> ##
 
@@ -139,6 +150,29 @@ See how the "oApp.loadTemplate(parameter1, parameter2, parameter3)" function is 
 
 Note: "grunt" may have problems loading new files, so it is recommended to stop the console using Ctrl + C, run "npm start" again and try to save the changes again.
 
+## Using JavaScript <span name="UsingJavaScript"></span> ##
+
+We start creating a file called "example.js" in the path "../src/js/", in which we will add the following lines.
+
+**File: ../src/js/example.js**
+
+~~~
+"use strict";
+
+$(function(){
+	var hello = "Hello World!!!"
+
+	console.log(hello);
+});
+~~~
+
+If you go to the browser again and open its console, you will see the changes.
+
+Note: "grunt" may have problems loading new files, so it is recommended to stop the console using Ctrl + C, run "npm start" again and try to save the changes again.
+
+
+
+
 ## Using SASS <span name="UsingSASS"></span> ##
 
 We start creating a file called "example.sass" in the path "../src/sass/", in which we will add the following lines.
@@ -170,24 +204,7 @@ See how we use the "@import 'example'" line, which adds our new file to the main
 
 Note: "grunt" may have problems loading new files, so it is recommended to stop the console using Ctrl + C, run "npm start" again and try to save the changes again.
 
-## Using JavaScript <span name="UsingJavaScript"></span> ##
 
-We start creating a file called "example.js" in the path "../src/js/", in which we will add the following lines.
 
-**File: ../src/js/example.js**
-
-~~~
-"use strict";
-
-$(function(){
-	var hello = "Hello World!!!"
-
-	console.log(hello);
-});
-~~~
-
-If you go to the browser again and open its console, you will see the changes.
-
-Note: "grunt" may have problems loading new files, so it is recommended to stop the console using Ctrl + C, run "npm start" again and try to save the changes again.
 
 ## Production <span name="Production"></span> ##
