@@ -8,8 +8,7 @@
 2. [Dependencies.](#Dependencies "Dependencies")
 3. [Getting started.](#GettingStarted "Getting started")
 4. [Using components.](#UsingComponents "Using components")
-5. [Using SASS.](#UsingSASS "Using SASS")
-6. [Production.](#Production "Production")
+5. [Production.](#Production "Production")
 
 ## Introduction <span name="Introduction"></span> ##
 
@@ -68,52 +67,5 @@ If all goes well, you will see the changes in the browser. Each of the most rele
 ## Using components <span name="UsingComponents"></span> ##
 
 ***THE DOCUMENTATION IS BEING REVIEWED FROM HERE***
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-## Using SASS <span name="UsingSASS"></span> ##
-
-We start creating a file called "example.sass" in the path "../src/sass/", in which we will add the following lines.
-
-**File: ../src/sass/_example.sass**
-
-~~~
-$sBackgroundColor: #5555ff
-$sFontColor: #ffffff
-
-main
-	background-color: $sBackgroundColor
-	color: $sFontColor
-~~~
-
-Now we will modify the file "../src/sass/main.sass", as follows.
-
-**File: ../src/sass/main.sass**
-
-~~~
-@import 'example'
-
-*
-	margin: 0
-	padding: 0
-~~~
-
-See how we use the "@import 'example'" line, which adds our new file to the main SASS file (main.sass). If all goes well, you will see the changes in the browser.
-
-Note: "grunt" may have problems loading new files, so it is recommended to stop the console using Ctrl + C, run "npm start" again and try to save the changes again.
 
 ## Production <span name="Production"></span> ##
