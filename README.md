@@ -185,3 +185,34 @@ $(() => {
 If all goes well you will be able to see the changes in the browser.
 
 ## Production <span name="Production"></span> ##
+
+To obtain the production files for your project, follow the steps below.
+
+1. Remember to make a copy of the development files to follow the next steps and get the production files.
+
+2. We will start by installing the dependencies using the following command in the root of the project.
+
+~~~
+npm i
+~~~
+
+3. We will modify the javascript files or others that need to make a change for production.
+
+4. Now we will execute the following command that will be in charge of preparing the files for production.
+
+~~~
+npm run prepare
+~~~
+
+5. We delete the directory "node_modules" and execute the following command that will load this same directory but only with the production dependencies. 
+
+~~~
+npm i --production
+~~~
+
+6. In the root of the project we will delete all the files except for "index.html" and we will keep the following folders.
+
+- node_modules/
+- src/
+
+7. We will also delete "src/sass" and within "src/js" and "src/template" only the "dist" folder will remain.
