@@ -77,7 +77,9 @@ If all goes well, you will see the changes in the browser. Each of the most rele
 The components consist of three files, a ".hbs" file that will contain HTML tags and Handlebars syntax, a ".js" file that will contain JavaScript code with JQuery syntax, and a ".sass" file that will contain CSS instructions with SASS syntax. We can see this by looking at the "body" component that is derived in the following files.
 
 **File #1: ./src/template/components/body.hbs**
+
 **File #2: ./src/js/components/body.js**
+
 **File #3: ./src/sass/components/_body.sass**
 
 Now we are going to create a new component called "contact", we will start to create the file "./src/template/components/contact.hbs".
