@@ -11,22 +11,7 @@ module.exports = function(grunt) {
 
     grunt.initConfig({
         pkg: grunt.file.readJSON('package.json'),
-
-        sass: {
-            dist: {
-                options: {
-                    style: 'compressed', noCache: true
-                },
-                files: [{
-                    expand: true,
-                    cwd:    "src/sass/",
-                    src:    ["*.sass"],
-                    dest: "src/css/dist/",
-                    ext:    ".min.css"
-                }]
-            }
-        },
-
+        
         handlebars: {
           compile: {
             options: {
@@ -55,8 +40,7 @@ module.exports = function(grunt) {
                 }
             },
             task_sass: {
-                files: oSassRoutes.a,
-                tasks: ['sass']
+                files: oSassRoutes.a
             },
             task_handlebars: {
                 files: oHbsRoutes.a,

@@ -16,10 +16,18 @@ This project seeks to provide an alternative to creating Single Page Application
 
 ## Dependencies <span name="Dependencies"></span> ##
 
-- Node.js (https://nodejs.org).
-- Ruby (https://www.ruby-lang.org or https://rubyinstaller.org).
-- Execute "gem install sass" on the console of your operating system.
-- Execute "npm i onep-cli -g" on the console of your operating system.
+* Node.js (https://nodejs.org).
+  - Run "node -v" in your OS console to see if it is already installed.
+* Npm CLI (https://docs.npmjs.com/cli).
+  - On Windows it comes with the Node.js installer, on Linux based OSs you will need to install it.
+  - Run "npm -v" in your OS console to see if it is already installed.
+* Sass (https://sass-lang.com).
+  - Run "npm i sass -g" in your OS console to install it.
+  - Run "sass --version" in your OS console to see if it is already installed.
+* OneP CLI.
+  - Run "npm i onep-cli -g".
+  - On Linux based OSs, include "--unsafe-perm", then the command would be "npm i onep-cli -g --unsafe-perm".
+  - Run "onep-cli -v" in your OS console to see if it is already installed.
 
 ## Getting started <span name="GettingStarted"></span> ##
 
