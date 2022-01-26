@@ -74,6 +74,112 @@ If all goes well, you will see the changes in the browser. Each of the most rele
 
 ## Using components <span name="UsingComponents"></span> ##
 
-***THE DOCUMENTATION IS BEING REVIEWED FROM HERE***
+The components consist of three files, a ".hbs" file that will contain HTML tags and Handlebars syntax, a ".js" file that will contain JavaScript code with JQuery syntax, and a ".sass" file that will contain CSS instructions with SASS syntax. We can see this by looking at the "body" component that is derived in the following files.
+
+**File #1: ./src/template/components/body.hbs**
+**File #2: ./src/js/components/body.js**
+**File #3: ./src/sass/components/_body.sass**
+
+Now we are going to create a new component called "contact", we will start to create the file "./src/template/components/contact.hbs".
+
+**File: ./src/template/components/contact.hbs**
+
+```hbs
+<h2>Contact</h2>
+```
+
+***Warning: It is recommended to restart the processes in the console using Ctrl + C and again "onep-cli start", this so that they recognize the changes in the file "Gruntfile.js" and the new files. If it is necessary to re-save the changes made for the production files to be updated. It is also important while we are in the development phase to verify that our browser is not using the cache, as this will prevent the page from updating correctly.***
+
+Now we will create the file "./src/sass/components/\_contact.sass" where we will add the styles of the component. It is recommended that ".sass" files for components start with the "\_" character.
+
+**File: ./src/sass/components/\_contact.sass**
+
+```sass
+#contact
+  color: black
+  background-color: orange
+```
+
+We can now add our new styles file to the "./src/sass/main.sass" file as follows.
+
+**File: ./src/sass/main.sass**
+
+```sass
+*
+  margin: 0
+  padding: 0
+
+@import "components/header"
+@import "components/body"
+@import "components/footer"
+
+@import "components/contact"
+```
+
+We will also create the "./src/js/components/contact.js" file that will be used to load our component into the view.
+
+**File: ./src/js/components/contact.js**
+
+```js
+"use strict";
+
+var oContact = {};
+
+/*
+*/
+oContact.load = () => {
+  let oData = {};
+  oApp.loadTemplate('components/contact', '#contact', oData);
+}
+```
+
+With this we already have all the files that make up our new component and the "oContact.load()" function is the one that will help us load the component in the view.
+
+***Warning: It is recommended to restart the processes in the console using Ctrl + C and again "onep-cli start", this so that they recognize the changes in the file "Gruntfile.js" and the new files. If it is necessary to re-save the changes made for the production files to be updated. It is also important while we are in the development phase to verify that our browser is not using the cache, as this will prevent the page from updating correctly.***
+
+To load our component to the view we will start by modifying the "./index.html" file adding the HTML tags where our component will be loaded, we will do it in the following way.
+
+**File: ./index.html**
+
+```html
+...
+<body>
+  <main>
+    <header id="header" data-template="true" data-styles="">
+      loaded...
+    </header>
+    <section id="body" data-template="true" data-styles="">
+      loaded...
+    </section>
+
+    <div id="contact" data-template="true" data-styles="">
+      loaded...
+    </div>
+
+    <footer id="footer" data-template="true" data-styles="">
+      loaded...
+    </footer>
+  </main>
+</body>
+...
+```
+
+Finally we will add the instruction to load the component by modifying the "./src/js/app.js" file as follows.
+
+**File: ./src/js/app.js**
+
+```js
+...
+$(() => {
+  oHeader.load();
+  oBody.load();
+  oFooter.load();
+
+  oContact.load();
+});
+...
+```
+
+If all goes well you will be able to see the changes in the browser.
 
 ## Production <span name="Production"></span> ##
