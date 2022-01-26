@@ -1,3 +1,4 @@
 exports.a=[
-'./src/js/*'
+'./src/js/*',
+'./src/js/components/*'
 ];

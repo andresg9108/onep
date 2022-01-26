@@ -2,196 +2,217 @@
 
 # OneP (In a page) #
 
-***THE DOCUMENTATION IS BEING REVIEWED FROM HERE***
-
 ## Content ##
 
 1. [Introduction.](#Introduction "Introduction")
 2. [Dependencies.](#Dependencies "Dependencies")
-3. [Starting.](#Starting "Starting")
-4. [Templates management.](#TemplatesManagement "Templates management")
-5. [Using SASS](#UsingSASS "Using SASS")
-6. [Using JavaScript.](#UsingJavaScript "Using JavaScript")
+3. [Getting started.](#GettingStarted "Getting started")
+4. [Using components.](#UsingComponents "Using components")
+5. [Production.](#Production "Production")
 
-<span id="Introduction"></span>
-## Introduction ##
+## Introduction <span name="Introduction"></span> ##
 
 This project seeks to provide an alternative to creating Single Page Application Sites (SPA).
 
-<span id="Dependencies"></span>
-## Dependencies ##
+## Dependencies <span name="Dependencies"></span> ##
 
-- Node.js (https://nodejs.org).
-- Ruby (https://www.ruby-lang.org or https://rubyinstaller.org).
-- XAMPP (https://www.apachefriends.org/es/index.html).
-- Execute "gem install sass" on the console of your operating system.
-- Execute "npm i grunt -g" on the console of your operating system.
-- Execute "npm i install-here -g" on the console of your operating system.
+* Node.js (https://nodejs.org).
+  - Run "node -v" in your OS console to see if it is already installed.
+* Npm CLI (https://docs.npmjs.com/cli).
+  - On Windows it comes with the Node.js installer, on Linux based OSs you will need to install it.
+  - Run "npm -v" in your OS console to see if it is already installed.
+* Sass (https://sass-lang.com).
+  - Run "npm i sass -g" in your OS console to install it.
+  - Run "sass --version" in your OS console to see if it is already installed.
+* OneP CLI.
+  - Run "npm i onep-cli -g".
+  - On Linux based OSs, include "--unsafe-perm", then the command would be "npm i onep-cli -g --unsafe-perm".
+  - Run "onep-cli -v" in your OS console to see if it is already installed.
 
-<span id="Starting"></span>
-## Starting ##
+## Getting started <span name="GettingStarted"></span> ##
 
-In principle, don't forget to open the "XAMPP Control Panel" and start the "Apache" service. Now we will create a folder called "myproject" in the path of the "XAMPP" file, which would be left with the following path "../xampp/htdocs/myproject". With the folder ready, we can now access it using the console of your operating system and execute the following command, which brings all the files from the "onep" project.
+Using the console of our operating system we will access the directory that we want for our project, then we will execute the following command that will load all the files of the "onep" project.
 
-***install-here onep-ag***
+~~~
+onep-cli install
+~~~
 
-Then we execute the following command that brings all the dependencies of the "onep" project.
+Now we can execute the following command that makes our project be aware of the changes to automatically execute the corresponding commands.
 
-***npm i***
+~~~
+onep-cli start
+~~~
 
-Now we can execute the following command, that makes our project listen to the changes and automatically execute the corresponding commands.
+In the development phase, the project must always be attentive to changes and to exit you just have to use Ctrl + C. With this we can enter the following URL and see our project for the first time.
 
-***npm start***
+**http://localhost:8084**
 
-In the development phase, the project must always be listening to changes. With this we can already enter the following URL and see our project for the first time.
-
-**http://localhost/myproject/**
-
-Also, it is recommended to add the "Livereload" extension for "Google Chrome" or "Mozilla Firefox". This will instruct these browsers to refresh the page the moment they detect a change, but remember to listen to the project with the "npm start" command and activate "Livereload" in the browser you want.
+It is also recommended to add the extension "Livereload" for "Google Chrome" or "Mozilla Firefox". This will tell these browsers to refresh the page the moment they detect a change, but always remember to run the "onep-cli start" command, prevent the browser from caching, and enable "Livereload" on it.
 
 - [Extension for Google Chrome.](https://chrome.google.com/webstore/detail/livereload/jnihajbhpnppcggbcgedagnkighmdlei?hl=es "Extension for Google Chrome.")
 - [Extension for Mozilla Firefox.](https://addons.mozilla.org/es/firefox/addon/livereload-web-extension "Extension for Mozilla Firefox.")
 
-With this we can do our first test modifying the following file.
+With this we can make our first test modifying the file "./src/template/components/body.hbs" adding a "Hello World" to it. Modifying this file would look like this.
 
-**File: ../src/template/body.hbs**
+**File: ./src/template/components/body.hbs**
 
-~~~
+```hbs
 <h2>Hello World!!!</h2>
-~~~
+```
 
 If all goes well, you will see the changes in the browser. Each of the most relevant files and folders in the project is explained below with a description.
 
-* "../src/": Contains all the resources of the project.
-	- "../src/css/": Contains all the CSS files that SASS generates.
-	- "../src/js/": Contains all the JavaScript files for the project.
-	- "../src/sass/": Contains all the SASS files of the project.
-	- "../src/template/": Contains all the project templates.
-* "Gruntfile.js": Stores all grunt settings.
-* "index.html": HTML main file.
-* "package.json": Stores all Node.js settings.
+* "./grunt/": It contains all the routes that Grunt uses to function.
+* "./src/": It contains all the resources of the project.
+	- "./src/css/": It contains all the CSS files that SASS generates.
+	- "./src/js/": Here we can manage our javascript files.
+	- "./src/sass/": Here we can manage our sass files.
+	- "./src/template/": Here we can manage our handlebars files.
+* "./Gruntfile.js": Stores all grunt settings.
+* "./index.html": Main HTML file.
+* "./package.json": Stores all Node.js settings.
 
-<span id="TemplatesManagement"></span>
-## Templates management ##
+## Using components <span name="UsingComponents"></span> ##
 
-We already know that the templates are in the "../src/template/" directory, now we will create two new templates to see how it works, which we will call "theme1.hbs" and "theme2.hbs".
+The components consist of three files, a ".hbs" file that will contain HTML tags and Handlebars syntax, a ".js" file that will contain JavaScript code with JQuery syntax, and a ".sass" file that will contain CSS instructions with SASS syntax. We can see this by looking at the "body" component that is derived in the following files.
 
-**File: ../src/template/theme1.hbs**
+**File #1: ./src/template/components/body.hbs**
 
-~~~
-<h1>This is my theme #1</h1>
-~~~
+**File #2: ./src/js/components/body.js**
 
-**File: ../src/template/theme2.hbs**
+**File #3: ./src/sass/components/_body.sass**
 
-~~~
-<h1>This is my theme #2 [{{hello}}]</h1>
-~~~
+Now we are going to create a new component called "contact", we will start to create the file "./src/template/components/contact.hbs".
 
-Now we will modify the "body" of the file "../index.html", adding two type labels "section" called "theme1" and "theme2", as shown below.
+**File: ./src/template/components/contact.hbs**
 
-**File: ../index.html**
+```hbs
+<h2>Contact</h2>
+```
 
-~~~
-...
-<body>
-	<main>
-	  <header id="head" data-template="true" data-styles="">
-	    loaded...
-	  </header>
-	  <section id="body" data-template="true" data-styles="">
-	    loaded...
-	  </section>
+***Warning: It is recommended to restart the processes in the console using Ctrl + C and again "onep-cli start", this so that they recognize the changes in the file "Gruntfile.js" and the new files. If it is necessary to re-save the changes made for the production files to be updated. It is also important while we are in the development phase to verify that our browser is not using the cache, as this will prevent the page from updating correctly.***
 
-	  <section id="theme1" data-template="true" data-styles="">
-	    loaded...
-	  </section>
-	  <section id="theme2" data-template="true" data-styles="">
-	    loaded...
-	  </section>
+Now we will create the file "./src/sass/components/\_contact.sass" where we will add the styles of the component. It is recommended that ".sass" files for components start with the "\_" character.
 
-	  <footer id="foot" data-template="true" data-styles="">
-	    loaded...
-	  </footer>
-	</main>
-</body>
-...
-~~~
+**File: ./src/sass/components/\_contact.sass**
 
-Now we will modify the file "../src/js/app.js", adding the lines that load the two new templates, as follows.
+```sass
+#contact
+  color: black
+  background-color: orange
+```
 
-**File: ../src/js/app.js**
+We can now add our new styles file to the "./src/sass/main.sass" file as follows.
 
-~~~
-...
-$(function(){
-	var oData = {};
-	oApp.loadTemplate('header', '#head', oData);
-	oApp.loadTemplate('body', '#body', oData);
-	oApp.loadTemplate('footer', '#foot', oData);
+**File: ./src/sass/main.sass**
 
-	oApp.loadTemplate('theme1', '#theme1', oData);
-	oData = {
-		'hello': 'Hello World'
-	};
-	oApp.loadTemplate('theme2', '#theme2', oData);
-});
-...
-~~~
-
-See how the "oApp.loadTemplate(parameter1, parameter2, parameter3)" function is used to add new templates, where the first parameter is the name of the template, the second parameter is the ID where the template is loaded and the third parameter is the data that is send the template.
-
-Note: "grunt" may have problems loading new files, so it is recommended to stop the console using Ctrl + C, run "npm start" again and try to save the changes again.
-
-<span id="UsingSASS"></span>
-## Using SASS ##
-
-We start creating a file called "example.sass" in the path "../src/sass/", in which we will add the following lines.
-
-**File: ../src/sass/_example.sass**
-
-~~~
-$sBackgroundColor: #5555ff
-$sFontColor: #ffffff
-
-main
-	background-color: $sBackgroundColor
-	color: $sFontColor
-~~~
-
-Now we will modify the file "../src/sass/main.sass", as follows.
-
-**File: ../src/sass/main.sass**
-
-~~~
-@import 'example'
-
+```sass
 *
-	margin: 0
-	padding: 0
-~~~
+  margin: 0
+  padding: 0
 
-See how we use the "@import 'example'" line, which adds our new file to the main SASS file (main.sass). If all goes well, you will see the changes in the browser.
+@import "components/header"
+@import "components/body"
+@import "components/footer"
 
-Note: "grunt" may have problems loading new files, so it is recommended to stop the console using Ctrl + C, run "npm start" again and try to save the changes again.
+@import "components/contact"
+```
 
-<span id="UsingJavaScript"></span>
-## Using JavaScript ##
+We will also create the "./src/js/components/contact.js" file that will be used to load our component into the view.
 
-We start creating a file called "example.js" in the path "../src/js/", in which we will add the following lines.
+**File: ./src/js/components/contact.js**
 
-**File: ../src/js/example.js**
-
-~~~
+```js
 "use strict";
 
-$(function(){
-	var hello = "Hello World!!!"
+var oContact = {};
 
-	console.log(hello);
+/*
+*/
+oContact.load = () => {
+  let oData = {};
+  oApp.loadTemplate('components/contact', '#contact', oData);
+}
+```
+
+With this we already have all the files that make up our new component and the "oContact.load()" function is the one that will help us load the component in the view.
+
+***Warning: It is recommended to restart the processes in the console using Ctrl + C and again "onep-cli start", this so that they recognize the changes in the file "Gruntfile.js" and the new files. If it is necessary to re-save the changes made for the production files to be updated. It is also important while we are in the development phase to verify that our browser is not using the cache, as this will prevent the page from updating correctly.***
+
+To load our component to the view we will start by modifying the "./index.html" file adding the HTML tags where our component will be loaded, we will do it in the following way.
+
+**File: ./index.html**
+
+```html
+...
+<body>
+  <main>
+    <header id="header" data-template="true" data-styles="">
+      loaded...
+    </header>
+    <section id="body" data-template="true" data-styles="">
+      loaded...
+    </section>
+
+    <div id="contact" data-template="true" data-styles="">
+      loaded...
+    </div>
+
+    <footer id="footer" data-template="true" data-styles="">
+      loaded...
+    </footer>
+  </main>
+</body>
+...
+```
+
+Finally we will add the instruction to load the component by modifying the "./src/js/app.js" file as follows.
+
+**File: ./src/js/app.js**
+
+```js
+...
+$(() => {
+  oHeader.load();
+  oBody.load();
+  oFooter.load();
+
+  oContact.load();
 });
+...
+```
+
+If all goes well you will be able to see the changes in the browser.
+
+## Production <span name="Production"></span> ##
+
+To obtain the production files for your project, follow the steps below.
+
+1. Remember to make a copy of the development files to follow the next steps and get the production files.
+
+2. We will start by installing the dependencies using the following command in the root of the project.
+
+~~~
+npm i
 ~~~
 
-If you go to the browser again and open its console, you will see the changes.
+3. We will modify the javascript files or others that need to make a change for production.
 
-Note: "grunt" may have problems loading new files, so it is recommended to stop the console using Ctrl + C, run "npm start" again and try to save the changes again.
+4. Now we will execute the following command that will be in charge of preparing the files for production.
+
+~~~
+npm run prepare
+~~~
+
+5. We delete the directory "node_modules" and execute the following command that will load this same directory but only with the production dependencies. 
+
+~~~
+npm i --production
+~~~
+
+6. In the root of the project we will delete all the files except for "index.html" and we will keep the following folders.
+
+- node_modules/
+- src/
+
+7. We will also delete "src/sass" and within "src/js" and "src/template" only the "dist" folder will remain.
