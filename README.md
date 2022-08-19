@@ -52,6 +52,12 @@ It is also recommended to add the extension "Livereload" for "Google Chrome" or 
 - [Extension for Google Chrome.](https://chrome.google.com/webstore/detail/livereload/jnihajbhpnppcggbcgedagnkighmdlei?hl=es "Extension for Google Chrome.")
 - [Extension for Mozilla Firefox.](https://addons.mozilla.org/es/firefox/addon/livereload-web-extension "Extension for Mozilla Firefox.")
 
+To update "onep" in our project and its dependencies we can use the following command.
+
+~~~
+onep-cli update
+~~~
+
 With this we can make our first test modifying the file "./src/template/components/body.hbs" adding a "Hello World" to it. Modifying this file would look like this.
 
 **File: ./src/template/components/body.hbs**
@@ -207,7 +213,7 @@ npm run prepare
 5. We delete the directory "node_modules" and execute the following command that will load this same directory but only with the production dependencies. 
 
 ~~~
-npm i --production
+npm i --production --ignore-scripts
 ~~~
 
 6. In the root of the project we will delete all the files except for "index.html" and we will keep the following folders.
