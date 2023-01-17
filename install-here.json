@@ -1,5 +1,5 @@
 {
-  "ignoreOverwrite": "LICENSE.txt;README.md",
+  "ignoreOverwrite": "LICENSE.txt;README.md;README_ES.md",
   "ignorePath": "grunt;src",
   "checkVersion": true
 }
