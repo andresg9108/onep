@@ -1,104 +1,104 @@
-# OneP (In a page) #
+# OneP (En una página) #
 
-## Content ##
+## Contenido ##
 
-1. [Introduction.](#Introduction "Introduction")
-2. [Dependencies.](#Dependencies "Dependencies")
-3. [Getting started.](#GettingStarted "Getting started")
-4. [Using components.](#UsingComponents "Using components")
-5. [Production.](#Production "Production")
+1. Introducción.
+2. Dependencias.
+3. Comenzando.
+4. Uso de componentes.
+5. Producción.
 
-## Introduction <span name="Introduction"></span> ##
+## Introducción ##
 
-This project seeks to provide an alternative to creating Single Page Application Sites (SPA).
+Este proyecto busca brindar una alternativa a la creación de aplicaciones de una sola página (SPA).
 
-## Dependencies <span name="Dependencies"></span> ##
+## Dependencias ##
 
 * Node.js (https://nodejs.org).
-  - Run "node -v" in your OS console to see if it is already installed.
-* Npm CLI (https://docs.npmjs.com/cli).
-  - On Windows it comes with the Node.js installer, on Linux based OSs you will need to install it.
-  - Run "npm -v" in your OS console to see if it is already installed.
+  - Ejecuta "node --version" en la consola de su sistema operativo para ver si ya está instalado.
+* CLI de Npm (https://docs.npmjs.com/cli).
+  - En Windows viene con el instalador de Node.js, en los sistemas operativos basados en Linux deberá instalarlo.
+  - Ejecuta "npm --version" en la consola de su sistema operativo para ver si ya está instalado.
 * Sass (https://sass-lang.com).
-  - Run "npm i sass -g" in your OS console to install it.
-  - Run "sass --version" in your OS console to see if it is already installed.
-* OneP CLI.
-  - Run "npm i onep-cli -g".
-  - On Linux based OSs, include "--unsafe-perm", then the command would be "npm i onep-cli -g --unsafe-perm".
-  - Run "onep-cli -v" in your OS console to see if it is already installed.
+  - Ejecuta "npm i sass -g" en la consola de su sistema operativo para instalarlo.
+  - Ejecuta "sass --version" en la consola de su sistema operativo para ver si ya está instalado.
+* CLI de OneP.
+  - Ejecuta "npm i onep-cli -g".
+  - En sistemas operativos basados en Linux incluya "--unsafe-perm". El comando quedaría de la siguiente forma "npm i onep-cli -g --unsafe-perm".
+  - Ejecuta "onep-cli --version" en la consola de su sistema operativo para ver si ya está instalado.
 
-## Getting started <span name="GettingStarted"></span> ##
+## Comenzando ##
 
-Using the console of our operating system we will access the directory that we want for our project, then we will execute the following command that will load all the files of the "onep" project.
+Usando la consola de nuestro sistema operativo accederemos al directorio que queramos para nuestro proyecto, luego ejecutaremos el siguiente comando que cargará todos los archivos del proyecto "onep".
 
 ~~~
 onep-cli install
 ~~~
 
-Now we can execute the following command that makes our project be aware of the changes to automatically execute the corresponding commands.
+Ahora podemos ejecutar el siguiente comando que hace que nuestro proyecto esté al tanto de los cambios para ejecutar automáticamente los comandos correspondientes.
 
 ~~~
 onep-cli start
 ~~~
 
-In the development phase, the project must always be attentive to changes and to exit you just have to use Ctrl + C. With this we can enter the following URL and see our project for the first time.
+En la fase de desarrollo, el proyecto siempre debe estar atento a los cambios y para salir solo hay que usar Ctrl + C. Con esto podemos ingresar a la siguiente URL y ver nuestro proyecto por primera vez.
 
 **http://localhost:8084**
 
-It is also recommended to add the extension "Livereload" for "Google Chrome" or "Mozilla Firefox". This will tell these browsers to refresh the page the moment they detect a change, but always remember to run the "onep-cli start" command, prevent the browser from caching, and enable "Livereload" on it.
+También se recomienda agregar la extensión "Livereload" para "Google Chrome" o "Mozilla Firefox". Esto les indicará a estos navegadores que actualicen la página tan pronto como detecten un cambio, pero recuerde siempre ejecutar el comando "onep-cli start", evitar que el navegador almacene en caché y habilitar "Livereload" en él.
 
 - [Extension for Google Chrome.](https://chrome.google.com/webstore/detail/livereload/jnihajbhpnppcggbcgedagnkighmdlei?hl=es "Extension for Google Chrome.")
 - [Extension for Mozilla Firefox.](https://addons.mozilla.org/es/firefox/addon/livereload-web-extension "Extension for Mozilla Firefox.")
 
-To update "onep" in our project and its dependencies we can use the following command.
+Para actualizar "onep" en nuestro proyecto y sus dependencias podemos usar el siguiente comando.
 
 ~~~
 onep-cli update
 ~~~
 
-With this we can make our first test modifying the file "./src/template/components/body.hbs" adding a "Hello World" to it. Modifying this file would look like this.
+Con esto podemos hacer nuestra primera prueba modificando el archivo "./src/template/components/body.hbs" agregándole un "Hello World". La modificación de este archivo se vería así.
 
-**File: ./src/template/components/body.hbs**
+**Archivo: ./src/template/components/body.hbs**
 
 ```hbs
-<h2>Hello World!!!</h2>
+<h2>¡Hello World!</h2>
 ```
 
-If all goes well, you will see the changes in the browser. Each of the most relevant files and folders in the project is explained below with a description.
+Si todo va bien verá los cambios en el navegador. Cada uno de los archivos y carpetas más relevantes del proyecto se explica a continuación con una descripción.
 
-* "./grunt/": It contains all the routes that Grunt uses to function.
-* "./src/": It contains all the resources of the project.
-	- "./src/css/": It contains all the CSS files that SASS generates.
-	- "./src/js/": Here we can manage our javascript files.
-	- "./src/sass/": Here we can manage our sass files.
-	- "./src/template/": Here we can manage our handlebars files.
-* "./Gruntfile.js": Stores all grunt settings.
-* "./index.html": Main HTML file.
-* "./package.json": Stores all Node.js settings.
+* "./grunt/": Contiene todas las rutas que usa Grunt para funcionar.
+* "./src/": Contiene todos los recursos del proyecto.
+  - "./src/css/": Contiene todos los archivos CSS que genera SASS.
+  - "./src/js/": Aquí podemos administrar nuestros archivos JavaScript.
+  - "./src/sass/": Aquí podemos administrar nuestros archivos SASS.
+  - "./src/template/": Aquí podemos gestionar nuestros archivos de Handlebars.
+* "./Gruntfile.js": Almacena todas las configuraciones de grunt.
+* "./index.html": Archivo HTML principal.
+* "./package.json": Almacena todas las configuraciones de Node.js
 
-## Using components <span name="UsingComponents"></span> ##
+## Uso de componentes ##
 
-The components consist of three files, a ".hbs" file that will contain HTML tags and Handlebars syntax, a ".js" file that will contain JavaScript code with JQuery syntax, and a ".sass" file that will contain CSS instructions with SASS syntax. We can see this by looking at the "body" component that is derived in the following files.
+Los componentes constan de tres archivos, un archivo ".hbs" que contendrá etiquetas HTML y sintaxis de Handlebars, un archivo ".js" que contendrá código JavaScript y un archivo ".sass" que contendrá instrucciones CSS con sintaxis SASS. Podemos ver esto mirando el componente "body" que se deriva en los siguientes archivos.
 
-**File #1: ./src/template/components/body.hbs**
+**Archivo #1: ./src/template/components/body.hbs**
 
-**File #2: ./src/js/components/body.js**
+**Archivo #2: ./src/js/components/body.js**
 
-**File #3: ./src/sass/components/_body.sass**
+**Archivo #3: ./src/sass/components/_body.sass**
 
-Now we are going to create a new component called "contact", we will start to create the file "./src/template/components/contact.hbs".
+Ahora vamos a crear un nuevo componente llamado "contact". Comenzaremos a crear el archivo "./src/template/components/contact.hbs".
 
-**File: ./src/template/components/contact.hbs**
+**Archivo: ./src/template/components/contact.hbs**
 
 ```hbs
 <h2>Contact</h2>
 ```
 
-***Warning: It is recommended to restart the processes in the console using Ctrl + C and again "onep-cli start", this so that they recognize the changes in the file "Gruntfile.js" and the new files. If it is necessary to re-save the changes made for the production files to be updated. It is also important while we are in the development phase to verify that our browser is not using the cache, as this will prevent the page from updating correctly.***
+**Advertencia: Se recomienda reiniciar los procesos en la consola usando Ctrl + C y nuevamente "onep-cli start" para que reconozca los archivos nuevos. Si es necesario, hay que volver a guardar los cambios realizados para que los archivos de producción se actualicen. También es importante mientras estamos en la fase de desarrollo, verificar que nuestro navegador no esté usando el caché.**
 
-Now we will create the file "./src/sass/components/\_contact.sass" where we will add the styles of the component. It is recommended that ".sass" files for components start with the "\_" character.
+Ahora crearemos el archivo "./src/sass/components/\_contact.sass" donde agregaremos los estilos del componente. Se recomienda que los archivos ".sass" para componentes comiencen con el carácter "\_".
 
-**File: ./src/sass/components/\_contact.sass**
+**Archivo: ./src/sass/components/\_contact.sass**
 
 ```sass
 #contact
@@ -106,15 +106,11 @@ Now we will create the file "./src/sass/components/\_contact.sass" where we will
   background-color: orange
 ```
 
-We can now add our new styles file to the "./src/sass/main.sass" file as follows.
+Ahora podemos agregar nuestro nuevo archivo de estilos al archivo "./src/sass/main.sass" de la siguiente manera.
 
-**File: ./src/sass/main.sass**
+**Archivo: ./src/sass/main.sass**
 
 ```sass
-*
-  margin: 0
-  padding: 0
-
 @import "components/header"
 @import "components/body"
 @import "components/footer"
@@ -122,9 +118,9 @@ We can now add our new styles file to the "./src/sass/main.sass" file as follows
 @import "components/contact"
 ```
 
-We will also create the "./src/js/components/contact.js" file that will be used to load our component into the view.
+También crearemos el archivo "./src/js/components/contact.js" que usaremos para cargar nuestro componente en la vista.
 
-**File: ./src/js/components/contact.js**
+**Archivo: ./src/js/components/contact.js**
 
 ```js
 "use strict";
@@ -139,13 +135,13 @@ oContact.load = () => {
 }
 ```
 
-With this we already have all the files that make up our new component and the "oContact.load()" function is the one that will help us load the component in the view.
+Con esto ya tenemos todos los archivos que componen nuestro nuevo componente y la función "oContact.load()" es la que nos ayudará a cargar el componente en la vista.
 
-***Warning: It is recommended to restart the processes in the console using Ctrl + C and again "onep-cli start", this so that they recognize the changes in the file "Gruntfile.js" and the new files. If it is necessary to re-save the changes made for the production files to be updated. It is also important while we are in the development phase to verify that our browser is not using the cache, as this will prevent the page from updating correctly.***
+**Advertencia: Se recomienda reiniciar los procesos en la consola usando Ctrl + C y nuevamente "onep-cli start" para que reconozca los archivos nuevos. Si es necesario, hay que volver a guardar los cambios realizados para que los archivos de producción se actualicen. También es importante mientras estamos en la fase de desarrollo, verificar que nuestro navegador no esté usando el caché.**
 
-To load our component to the view we will start by modifying the "./index.html" file adding the HTML tags where our component will be loaded, we will do it in the following way.
+Para cargar nuestro componente a la vista comenzaremos modificando el archivo "./index.html" agregando las etiquetas HTML donde se cargará nuestro componente, lo haremos de la siguiente manera.
 
-**File: ./index.html**
+**Archivo: ./index.html**
 
 ```html
 ...
@@ -170,13 +166,13 @@ To load our component to the view we will start by modifying the "./index.html" 
 ...
 ```
 
-Finally we will add the instruction to load the component by modifying the "./src/js/app.js" file as follows.
+Finalmente agregaremos la instrucción para cargar el componente modificando el archivo "./src/js/app.js" de la siguiente manera.
 
-**File: ./src/js/app.js**
+**Archivo: ./src/js/app.js**
 
 ```js
 ...
-$(() => {
+document.addEventListener('DOMContentLoaded', (e) => {;
   oHeader.load();
   oBody.load();
   oFooter.load();
@@ -186,37 +182,35 @@ $(() => {
 ...
 ```
 
-If all goes well you will be able to see the changes in the browser.
+Si todo va bien podrás ver los cambios en el navegador.
 
-## Production <span name="Production"></span> ##
+## Producción ##
 
-To obtain the production files for your project, follow the steps below.
+Para obtener los archivos de producción de su proyecto, siga los pasos a continuación.
 
-1. Remember to make a copy of the development files to follow the next steps and get the production files.
-
-2. We will start by installing the dependencies using the following command in the root of the project.
+1. Recuerda hacer una copia de los archivos de desarrollo para seguir los siguientes pasos y obtener los archivos de producción.
+2. Comenzaremos instalando las dependencias usando el siguiente comando en la raíz del proyecto.
 
 ~~~
 npm i
 ~~~
 
-3. We will modify the javascript files or others that need to make a change for production.
-
-4. Now we will execute the following command that will be in charge of preparing the files for production.
+3. Modificaremos los archivos javascript u otros que necesiten hacer algún cambio para producción.
+4. Ahora ejecutaremos el siguiente comando que se encargará de preparar los archivos para la producción.
 
 ~~~
 npm run prepare
 ~~~
 
-5. We delete the directory "node_modules" and execute the following command that will load this same directory but only with the production dependencies. 
+5. Borramos el directorio "node_modules" y ejecutamos el siguiente comando que cargará este mismo directorio pero solo con las dependencias de producción.
 
 ~~~
 npm i --production --ignore-scripts
 ~~~
 
-6. In the root of the project we will delete all the files except for "index.html" and we will keep the following folders.
+6. En la raíz del proyecto eliminaremos todos los archivos excepto "index.html" y mantendremos las siguientes carpetas.
 
 - node_modules/
 - src/
 
-7. We will also delete "src/sass" and within "src/js" and "src/template" only the "dist" folder will remain.
+7. También eliminaremos "src/sass" y dentro de "src/js" y "src/template" solo quedará la carpeta "dist".
