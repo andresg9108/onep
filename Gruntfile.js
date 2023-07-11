@@ -1,4 +1,7 @@
 const fs = require('fs');
+
+var oCopyRoutes = require('./grunt/copy/routes.js');
+var oCopyFiles = require('./grunt/copy/files.js');
 var oHbsRoutes = require('./grunt/hbs/routes.js');
 var oHbsFiles = require('./grunt/hbs/files.js');
 var oSassRoutes = require('./grunt/sass/routes.js');
@@ -29,6 +32,8 @@ module.exports = function(grunt) {
                 files: oJsFiles.o
             }
         },
+
+        copy: oCopyFiles.o,
 
         watch: {
             files: ['*.*'],

@@ -19,12 +19,8 @@ Este proyecto busca brindar una alternativa a la creación de aplicaciones de un
 * CLI de Npm (https://docs.npmjs.com/cli).
   - En Windows viene con el instalador de Node.js, en los sistemas operativos basados en Linux deberá instalarlo.
   - Ejecuta "npm --version" en la consola de su sistema operativo para ver si ya está instalado.
-* Sass (https://sass-lang.com).
-  - Ejecuta "npm i sass -g" en la consola de su sistema operativo para instalarlo.
-  - Ejecuta "sass --version" en la consola de su sistema operativo para ver si ya está instalado.
 * CLI de OneP.
   - Ejecuta "npm i onep-cli -g".
-  - En sistemas operativos basados en Linux incluya "--unsafe-perm". El comando quedaría de la siguiente forma "npm i onep-cli -g --unsafe-perm".
   - Ejecuta "onep-cli --version" en la consola de su sistema operativo para ver si ya está instalado.
 
 ## Comenzando ##
